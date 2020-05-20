@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jquery</title>
+    <style>
+        .p-text {
+            text-align: center;
+            color: orange;
+        }
+        
+        .assentors * {
+            display: block;
+            border: 2px solid #999;
+            color: #999;
+            padding: 5px;
+            margin: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 id="pTxt">Hello world</h1>
+    <h1 id="p">Prionto</h1>
+    <h1 class="h1">Prionto</h1>
+    <h1 id="h1">Prionto</h1>
+
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit dolorem sint vitae qui modi aspernatur, illo vel repellat distinctio velit architecto tempore reprehenderit, debitis repudiandae quasi facere impedit sit perspiciatis.</p>
+
+    <button id="toggle">Toggle Me</button>
+
+    <button id="btn">Vanish Me</button>
+
+    <input type="text" name="name" id="name" placeholder="Enter your name"> <br> <br>
+
+    <h3 id="lorem">Kuchu Macha Kacha</h3>
+
+    <button id="show">Show Me</button>
+
+    <button id="btn1">Set Text</button>
+    <button id="btn2"> Set HTML</button>
+    <button id="btn3">Set Value</button>
+    <button id="btn4">Show CSS</button>
+
+    <div class="assentors">
+        <div id="div"> div
+            <ul id="ul"> ul
+                <li id="li"> li
+                    <span id="span">
+                    span
+                </span>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="loading" style="text-align: center;">
+        <h1>
+            Login
+        </h1>
+        <input type="password" id="pass1" placeholder="Enter Password"> <br> <br>
+        <input type="password" id="pass2" placeholder="Renter Password"> <br> <br>
+        <button id="submit">Login</button> <br> <br>
+    </div>
+
+
+    <script src="jquery-3.5.1.min.js"></script>
+    <script src="get_post.js"></script>
+    <script src="syntax.js"></script>
+    <script src="event.js"></script>
+    <script src="css.js"></script>
+    <script src="ancestors.js"></script>
+    <script src="login.js"></script>
+
+    <script>
+        // $('h1').hide();
+        $('.h1').hide();
+        $('#h1').hide();
+    </script>
+</body>
+
+</html>

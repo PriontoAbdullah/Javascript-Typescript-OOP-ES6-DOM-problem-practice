@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+</head>
+
+<body>
+
+    <div class="container col-md-6" id="container">
+        <form action="" id="form" class="mt-5 ">
+            <label for=""><strong>Please Fill The Form</strong></label>
+
+            <div class="form-group">
+                <label for="name">What is your Name?</label>
+                <input type="text" class="form-control" name="name" id="name" placeholder="Enter Your Name">
+                <div class="invalid-feedback">You must have to provide a name</div>
+            </div>
+
+            <div class="form-group">
+                <label for="email">What is your Email?</label>
+                <input type="email" class="form-control" name="email" id="email" placeholder="Enter Your Email">
+                <div class="invalid-feedback">You must have to provide an email</div>
+            </div>
+
+            <div class="form-group">
+                <label for="password">What is your Password?</label>
+                <input type="password" class="form-control" name="password" id="password" placeholder="Enter Your Password">
+                <div class="invalid-feedback">You must have to provide a password</div>
+            </div>
+
+            <div class="form-group">
+                <label for="country">Select Your Country</label>
+                <select name="country" id="country" class="form-control">
+                    <option value="Bangladesh">Bangladesh</option>
+                    <option value="India">India</option>
+                    <option value="Pakistan">Pakistan</option>
+                    <option value="Nepal">Nepal</option>
+                    <option value="China">China</option>
+                </select>
+            </div>
+
+            <input type="submit" class="btn btn-primary" value="Submit">
+        </form>
+    </div>
+
+    <script src="form_handling.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+</body>
+
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Handeler</title>
+</head>
+
+<body>
+    <li id="first">Lorem, ipsum dolor.</li>
+    <li>Dolores, voluptatem dolore.</li>
+    <li>Consequatur, optio dolorem.</li>
+    <li onclick="itemClickHandler(event)">Sapiente, architecto perspiciatis.</li>
+    <li id="last">Soluta, nulla quibusdam?</li>
+
+    <script>
+        function itemClickHandler(event) {
+            console.log(event.target.innerText);
+        }
+
+        document.getElementById('last').addEventListener('click', itemClickHandler);
+        document.getElementById('first').addEventListener('click', itemClickHandler);
+    </script>
+</body>
+
+</html>

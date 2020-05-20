@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ForEach Traversing</title>
+</head>
+
+<body>
+    <ul id="list">
+        <li>One</li>
+        <li>Two</li>
+        <li>Three</li>
+
+        <script>
+            let listItem = document.getElementsByTagName('li');
+
+            let listItems = [...listItem]; /// forEach is an array traversing loop, so element asr store in array
+
+            listItems.forEach((li, index) => {
+                let text = li.innerHTML;
+                li.innerHTML = `(${index + 1}) ${text}`;
+            });
+
+            let li = document.createElement('li');
+            li.className = 'list-group-item'
+            li.setAttribute('title', 'I am fourth Item');
+            li.innerHTML = 'Four';
+
+            let list = document.getElementById('list');
+            list.appendChild(li);
+        </script>
+    </ul>
+</body>
+
+</html>

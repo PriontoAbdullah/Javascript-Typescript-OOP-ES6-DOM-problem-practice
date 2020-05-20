@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bubble Event</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+</head>
+
+<body>
+    <div id="container" class="container col-md-6">
+        <h1 class="text-center my-5">My List</h1>
+        <ul id="myList" class="list-group my-5 text-center">
+            <li id="first" class="list-group-item">Lorem, ipsum dolor.</li>
+            <li class="list-group-item">Maiores, eligendi fugiat.</li>
+            <li class="list-group-item">Fuga, esse id!</li>
+            <li class="list-group-item">Dolor, quae rem!</li>
+            <li id="last" class="list-group-item">Qui, minima modi!</li>
+        </ul>
+
+        <button id="addNew" class="btn btn-primary">Add New Item</button>
+    </div>
+
+    <script>
+        document.getElementById('first').addEventListener('click', function() {
+            console.log('First Item clicked');
+        })
+
+        document.getElementById('last').addEventListener('click', function() {
+            console.log('Last Item clicked');
+            event.stopPropagation(); // stop parent event //bubble up
+        })
+
+        document.getElementById('myList').addEventListener('click', function() {
+            console.log('UL clicked');
+        })
+
+        document.getElementById('container').addEventListener('click', function() {
+            console.log('Container clicked');
+        })
+
+        // for remove items by default - problem
+        // var items = document.getElementsByTagName('li');
+        // for (let i = 0; i < items.length; i++) {
+        //     let item = items[i];
+        //     item.addEventListener('click', function(event) {
+        //         event.target.parentNode.removeChild(event.target);
+        //     })
+        // }
+
+        // for add more items
+        document.getElementById('addNew').addEventListener('click', function(event) {
+            var itemParent = document.getElementById('myList');
+            var newItem = document.createElement('li');
+            newItem.className = 'list-group-item';
+            newItem.innerText = 'Brand New Item';
+            itemParent.appendChild(newItem);
+        })
+
+        // for remove any items
+        document.getElementById('myList').addEventListener('click', function(event) {
+            // console.log(this, event.target);
+            event.target.parentNode.removeChild(event.target);
+        })
+    </script>
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+</body>
+
+</html>
