@@ -1,7 +1,7 @@
 let form = document.getElementById('form');
 
-form.addEventListener('submit', function(event) {
-    event.preventDefault(); // default behavior nosto hoye jay
+form.addEventListener('submit', function (event) {
+    event.preventDefault(); // destroy default behavior
     // console.log(this.length);
     // console.log(this.elements[0]);
     // console.log(this['email']);
@@ -10,7 +10,7 @@ form.addEventListener('submit', function(event) {
     let isValid = false;
     [...this.elements].forEach(el => {
         // console.log(el.type, el.name, el.value);
-        if (el.type != 'submit') {
+        if (el.type != 'submit') { // expect submit type, Enter other all types of data in this block
             isValid = validator(el);
             if (isValid) {
                 formData[el.name] = el.value;
@@ -18,6 +18,7 @@ form.addEventListener('submit', function(event) {
                 alert(`${el.name} is Required!`);
                 el.classList.add('is-invalid'); //use Bootstrap validation class invalid-feedback
             }
+            // console.log(formData);
         }
     });
     if (isValid) {
