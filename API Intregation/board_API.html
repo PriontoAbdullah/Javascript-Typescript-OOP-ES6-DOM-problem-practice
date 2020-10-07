@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Board API</title>
+</head>
+<body>
+    <h1 id="activity"></h1>
+    <h3> Category: <span id="category"></span> </h3>
+    <p id="link"></p> 
+
+
+    <script>
+
+        function board_api(){
+            fetch('https://www.boredapi.com/api/activity/')
+            .then(res => res.json())
+            .then(data => {
+                document.getElementById('activity').innerText = data.activity;
+                document.getElementById('category').innerText = data.type;
+                document.getElementById('link').innerHTML = `<a href="${data.link}"> Visit Hare </a>`;
+            });
+        }
+
+        board_api();
+
+        setInterval(() => {
+            board_api();
+        }, 3000);
+
+    </script>
+
+</body>
+</html>
